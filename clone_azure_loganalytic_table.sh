@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [[ $# -ne 4 ]]; 
+then 
+    echo "Argument mismatch"
+    echo -e "Usage: \n$0 {SubscriptionID} {ResourceGroup} {WorkspaceName} {TableName}"
+    exit 1
+fi
+
 subkey=$1
 rg=$2
 ws=$3
