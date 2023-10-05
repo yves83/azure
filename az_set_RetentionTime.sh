@@ -12,8 +12,8 @@ rg=$2
 ws=$3
 trt=$4
 
-#az monitor log-analytics workspace table list --subscription $subkey --resource-group $rg --workspace-name $ws --output json > tab_list.json
-jq -r '.[] | .name' tab_list.json > tab_name
+az monitor log-analytics workspace table list --subscription $subkey --resource-group $rg --workspace-name $ws --output json > tab_list.json
+jq -r '.[] | .name' tab_list.json | sort > tab_name
 for n in `cat tab_name`;
 do
    echo "az monitor log-analytics workspace table update --subscription $subkey --resource-group $rg --workspace-name $ws --name $n --retention-time $trt --no-wait"
