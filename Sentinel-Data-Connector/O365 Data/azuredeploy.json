@@ -258,7 +258,7 @@
                         "recordTypes": "[parameters('recordTypes')]",
                         "workspaceID": "[parameters('workspaceID')]",
                         "workspaceKey": "[concat('@Microsoft.KeyVault(SecretUri=', reference(resourceId('Microsoft.KeyVault/vaults/secrets', variables('KeyVaultName'), 'workspaceKey')).SecretUriWithVersion, ')')]",
-                        "WEBSITE_RUN_FROM_PACKAGE": "https://github.com/yves83/azure/blob/715f0c5a46b815d7be5bc73156ea6bc0163f0d7a/Sentinel-Data-Connector/O365%20Data/O365APItoAS-Template.zip",
+                        "WEBSITE_RUN_FROM_PACKAGE": "https://github.com/yves83/azure/raw/refs/heads/main/Sentinel-Data-Connector/O365%20Data/O365APItoAS-Template.zip",
                         "LAURI": "[variables('LogAnaltyicsUri')]",
                         "customLogName": "O365",
                         "managementApi": "[parameters('office365Environment')]",
